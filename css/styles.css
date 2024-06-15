@@ -1,0 +1,295 @@
+::-webkit-scrollbar {
+    display: none;
+  }  
+
+  html {
+    scroll-behavior: smooth;
+}
+
+  html, body {
+    height: 1000vh; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Gurmukhi MN";
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #0D0D0D;
+}
+
+body, .sidebar {
+    transition: background-color 1s ease; 
+}
+
+.container {
+    position: relative;
+    flex: 1 0 auto;
+}
+
+/*发光 */
+.container a img {
+    transition: filter 0.3s ease;
+}
+.container a img:hover {
+    filter: brightness(1.2) ;
+}
+
+/* 禁止拖拽 */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -ms-user-drag: none;
+  }
+
+.image {
+    position: absolute;
+    height: auto;
+    transition: filter 0.3s ease;
+    will-change: transform;
+}
+
+.project1 {
+    width: 25vw; 
+    top: 10vh;
+    left: 13%; 
+}
+
+.project2 {
+    width: 14vw;
+    top: 68vh;
+    left: 67%;
+}
+
+.project3 {
+    width: 20vw;
+    top: 92vh;
+    left: 24%;
+    padding: 100px;
+}
+
+.project4-1 {
+    width: 15vw;
+    top: 148vh;
+    left: 70%;
+}
+
+.project5 {
+    width: 33vw;
+    top: 220vh;
+    left: 10%;
+}
+
+.project6-1 {
+    width: 10vw;
+    top: 240vh;
+    left: 65%;
+}
+
+.project7 {
+    width: 50vw;
+    top: 275vh;
+    left: 22%;
+}
+
+.project6-2 {
+    width: 16vw;
+    top: 385vh;
+    left: 65%;
+}
+
+.project4-2 {
+    width: 33vw;
+    top: 380vh;
+    left: 8%;
+}
+
+.project8 {
+    width: 30vw;
+    top: 480vh;
+    left: 14%;
+}
+
+.project9 {
+    width: 23vw;
+    top: 505vh;
+    left: 68%;
+}
+
+.project10 {
+    width: 30vw;
+    top: 650vh;
+    left: 50%;
+}
+
+.project11 {
+    width: 24vw;
+    top: 650vh;
+    left: 10%;
+}
+.project12 {
+    width: 30vw;
+    top: 730vh;
+    left: 55%;
+}
+
+
+/* 说明文 */
+.concepts {
+    position: absolute;
+    width: 100%;
+    height: 1000vh;
+    pointer-events: none;
+}
+
+#word1 {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    top: 51vh;
+    left: 55vw;
+    text-transform: uppercase;
+}
+#word2 {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 255vh;
+    left: 48vw;
+}
+#word3 {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    top: 430vh;
+    left: 20vw;
+    transition: color 0.5s ease;
+}
+#word4 {
+    position: absolute;
+    color: black;
+    font-size: 30px;
+    top: 550vh;
+    left: 50vw;
+    transition: color 0.5s ease;
+}
+#word5 {
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    top: 725vh;
+    left: 15vw;
+}
+#word6 {
+    position: absolute;
+    color: black;
+    font-size: 30px;
+    top: 830vh;
+    left: 47vw;
+}
+
+/* 侧边栏 */
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* 导航栏在上 */
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    display: block;
+    transition: color 0.3s;
+    position: relative; /* 基点 */
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%; 
+    width: 50%; 
+    height: 1px; 
+    background: rgb(221, 221, 221);
+    transition: all 0.3s;
+    transform: scale(0, 1); 
+    transform-origin: left top; 
+}
+
+.sidebar a:hover {
+    color: rgb(221, 221, 221);
+}
+
+.sidebar a:hover::after {
+    transform: scale(1, 1); /* X方向1，Y方向1 */
+}
+
+.sidebar.white-bg a {
+    color: black;
+}
+
+.sidebar.white-bg a::after {
+    background: black;
+}
+
+
+/* 页脚 */
+.footer {
+    background-color: #4F3D83; /* 紫色背景 */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-text p {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #C0C0C0; 
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.footer-buttons a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-buttons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-credits p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #C0C0C0; 
+}
+

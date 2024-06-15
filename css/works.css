@@ -1,0 +1,238 @@
+::-webkit-scrollbar {
+    display: none;
+}  
+/*==================================================
+スライダーのためのcss
+===================================*/
+
+.container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+img{
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+body {
+    font-family: "Gurmukhi MN";
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.gallery-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery {
+    margin: 0 0 5px 0;
+    max-width: 75vw;
+    height: auto;
+    width: 100%;
+}
+
+.lazy.loading {
+    display: inline-block;
+    min-height: 100px; /* 确保图片有一个最小高度，以便加载指示器可见 */
+}
+
+.gallery li {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.gallery li img {
+    object-fit: contain;
+    max-height: 90vh;
+    /* width: auto; */
+    /* max-width: 70%; */
+    margin: 0 auto;
+}
+
+/* 竖屏 */
+@media only screen and (max-width: 1200px) {
+    .gallery li img {
+        width: 80vw; /* 在小屏幕上设置较小的max-width */
+    }
+    .landscape-img {
+        top: 15vh !important;
+    }
+    .thumbnail-container {
+        width: 130px;
+    }
+    .choice-btn li img{
+        height: 130px;
+        width: 130px;
+    }
+}
+
+/* 笔记本屏 */
+@media only screen and (min-width: 1201px) and (max-width: 2000px) {
+    .gallery li img {
+        width: auto; /* 在小屏幕上设置较小的max-width */
+    }
+}
+
+/* 大屏全屏 */
+@media only screen and (min-width: 2001px) {
+    .gallery li img {
+        width: 65vw; /* 在大屏幕上设置较大的max-width */
+    }
+    
+}
+@media only screen and (max-height: 1000px) {
+    .thumbnail-container {
+        width: 130px;
+    }
+    .choice-btn li img{
+        height: 130px;
+        width:130px;
+    }
+}
+@media only screen and (min-height: 1001px) {
+    .thumbnail-container {
+        width: 180px;
+    }
+    .choice-btn li img{
+        height: 180px;
+        width:180px;
+    }
+}
+
+.wide-img {
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 其他样式 */
+}
+
+.landscape-img {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 其他样式 */
+}
+
+.portrait-img {
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.thumbnail-container {
+    /* width: 130px; */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.choice-btn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.choice-btn li{
+	cursor: pointer;
+	outline: none;
+	background: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.choice-btn li img{
+	opacity: 0.3;
+    /* height: 130px;
+    width: 130px; */
+    object-fit: cover;
+    margin: 0;
+}
+
+.choice-btn li.slick-current img{
+	opacity: 1;
+}
+
+.slick-prev, .slick-next {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    cursor: pointer;
+    outline: none;
+    border-top: 2px solid #979797;
+    border-right: 2px solid #979797;
+    height: 25px;
+    width: 25px;
+    background: none;
+}
+.slick-prev {
+    left: 2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {
+    right: 2.5%;
+    transform: rotate(45deg);
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a{
+	color: #B6B6B6;
+    text-decoration: none;
+}
+
+a:hover,
+a:active{
+	text-decoration: none;
+}
+
+.backHome{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 35px;
+    left: 50px;
+    font-size: 22px;
+}
+
+p{
+	margin: 30px 0;
+	word-wrap : break-word;
+    color: #B6B6B6;
+}
+
+.name p {
+    position: absolute;
+    bottom: 5px;
+    left: 50px;
+    font-size: 15px;
+}

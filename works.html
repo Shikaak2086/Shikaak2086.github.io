@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+body, html {
+    height: 100%; 
+    margin: 0; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-family: "Gurmukhi MN";
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+}
+
+h1 {
+    font-size: 30px;
+}
+/* 侧边栏 */
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; 
+}
+
+.sidebar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    display: block;
+    transition: color 0.3s;
+    position: relative; 
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%; 
+    width: 50%; 
+    height: 1px; 
+    background: rgb(0, 0, 0);
+    transition: all 0.3s;
+    transform: scale(0, 1); 
+    transform-origin: left top; 
+}
+
+.sidebar a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.sidebar a:hover::after {
+    transform: scale(1, 1); 
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+         <h1>
+            Coming soon!
+        </h1>
+    </div>
+
+    <div class="sidebar">
+        <a href="content.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>slogan?texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+            </div>
+            <div class="footer-buttons">
+                <a href="mailto:email@example.com"><img src="images/emailwh-4 2.png" alt="Email"></a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank"><img src="images/Platform=Instagram, Color=Negative.png" alt="Instagram"></a>
+                <a href="https://www.example.com" target="_blank"><img src="images/Platform=X (Twitter), Color=Negative.png" alt="Website"></a>
+            </div>
+            <div class="footer-credits">
+                <p>LI ZHAOXI</p>
+                <p>© 2024 Li Zhaoxi All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

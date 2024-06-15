@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body, html {
+            height: 100%; /* 确保html和body元素高度为视口高度 */
+            margin: 0; /* 移除默认边距 */
+        }
+        body {
+            font-family: "Gurmukhi MN";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            text-align: left;
+            position: relative;
+            margin-top: 10vh;
+        }
+        .logo {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: #4F3D83;
+            color: white;
+            padding: 40px;
+            width: 400px;
+            position: relative;
+        }
+        .card h1 {
+            margin-top: -30px;
+            font-size: 48px;
+        }
+        .card h2 {
+            margin-top: 10px;
+            font-size: 48px;
+        }
+        .card .contact {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .card .contact img {
+            margin-left: 10px;
+            width: 16px;
+            height: 16px;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4B0082;
+            line-height: 1.6;
+        }
+
+        /* 侧边栏 */
+.sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* 确保导航栏在其他内容之上 */
+}
+
+.sidebar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    display: block;
+    transition: color 0.3s;
+    position: relative; /* 基点 */
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%; /* 调整横线起点 */
+    width: 50%; 
+    height: 1px; 
+    background: rgb(0, 0, 0);
+    transition: all 0.3s;
+    transform: scale(0, 1); /* X方向0，Y方向1 */
+    transform-origin: left top; /* 左上基点 */
+}
+
+.sidebar a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.sidebar a:hover::after {
+    transform: scale(1, 1); /* X方向1，Y方向1 */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="logo">logo/words</div> -->
+        <div class="card">
+            <h1>LI</h1>
+            <h2>ZHAOXI</h2>
+            <div class="contact">lizhaoxibiz@gmail.com 
+                <!-- <img src="images/Platform=Instagram, Color=Negative.png" alt="Instagram"> 
+                <img src="images/Platform=X (Twitter), Color=Negative.png" alt="X"> -->
+            </div>
+        </div>
+        <div class="info">
+            中国出生 日本在住<br>
+            2024 多摩美术大学毕业
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <a href="content.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>slogan?texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+            </div>
+            <div class="footer-buttons">
+                <a href="mailto:email@example.com"><img src="images/emailwh-4 2.png" alt="Email"></a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank"><img src="images/Platform=Instagram, Color=Negative.png" alt="Instagram"></a>
+                <a href="https://www.example.com" target="_blank"><img src="images/Platform=X (Twitter), Color=Negative.png" alt="Website"></a>
+            </div>
+            <div class="footer-credits">
+                <p>LI ZHAOXI</p>
+                <p>© 2024 Li Zhaoxi All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
