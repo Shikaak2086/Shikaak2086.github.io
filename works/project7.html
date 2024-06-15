@@ -16,7 +16,6 @@
 
         .landscape-img {
             position: absolute;
-            top: 10vh;
             left: 50%;
             transform: translateX(-50%);
             /* 其他样式 */
@@ -27,6 +26,10 @@
             top: 5vh;
             left: 50%;
             transform: translateX(-50%);
+        }
+        
+        .gallery li img {
+            visibility: hidden; /* 初始状态隐藏图片 */
         }
     </style>
 </head>
@@ -82,6 +85,14 @@
     <script src="../js/works.js"></script>
 
     <script>
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.gallery li img').forEach(function(img) {
+                img.style.visibility = 'visible'; /* 页面完全加载后显示图片 */
+            });
+        });
+    </script>
+
+    <!-- <script>
         $(document).ready(function(){
         $('.gallery').slick({
             centerMode: true,
@@ -95,6 +106,6 @@
 
         
     });
-    </script>
+    </script> -->
 </body>
 </html>
