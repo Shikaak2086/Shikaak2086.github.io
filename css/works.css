@@ -4,13 +4,6 @@
 /*==================================================
 スライダーのためのcss
 ===================================*/
-
-.container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
 img{
 	width: 100%;
 	height: auto;
@@ -43,7 +36,7 @@ body {
     margin: 0 0 5px 0;
     max-width: 75vw;
     height: auto;
-    width: 100%;
+    width: auto;
 }
 
 .lazy.loading {
@@ -60,59 +53,8 @@ body {
 .gallery li img {
     object-fit: contain;
     max-height: 90vh;
-    /* width: auto; */
-    /* max-width: 70%; */
+    width: auto;
     margin: 0 auto;
-}
-
-/* 竖屏 */
-@media only screen and (max-width: 1200px) {
-    .gallery li img {
-        width: 80vw; /* 在小屏幕上设置较小的max-width */
-    }
-    .landscape-img {
-        top: 15vh !important;
-    }
-    .thumbnail-container {
-        width: 130px;
-    }
-    .choice-btn li img{
-        height: 130px;
-        width: 130px;
-    }
-}
-
-/* 笔记本屏 */
-@media only screen and (min-width: 1201px) and (max-width: 2000px) {
-    .gallery li img {
-        width: auto; /* 在小屏幕上设置较小的max-width */
-    }
-}
-
-/* 大屏全屏 */
-@media only screen and (min-width: 2001px) {
-    .gallery li img {
-        width: 65vw; /* 在大屏幕上设置较大的max-width */
-    }
-    
-}
-@media only screen and (max-height: 1000px) {
-    .thumbnail-container {
-        width: 130px;
-    }
-    .choice-btn li img{
-        height: 130px;
-        width:130px;
-    }
-}
-@media only screen and (min-height: 1001px) {
-    .thumbnail-container {
-        width: 180px;
-    }
-    .choice-btn li img{
-        height: 180px;
-        width:180px;
-    }
 }
 
 .wide-img {
@@ -139,7 +81,7 @@ body {
 }
 
 .thumbnail-container {
-    /* width: 130px; */
+    width: 130px;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -167,8 +109,8 @@ body {
 
 .choice-btn li img{
 	opacity: 0.3;
-    /* height: 130px;
-    width: 130px; */
+    height: 130px;
+    width: 130px;
     object-fit: cover;
     margin: 0;
 }

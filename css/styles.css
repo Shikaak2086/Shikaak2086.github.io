@@ -2,10 +2,6 @@
     display: none;
   }  
 
-  html {
-    scroll-behavior: smooth;
-}
-
   html, body {
     height: 1000vh; 
     margin: 0;
@@ -21,7 +17,7 @@ body {
     background-color: #0D0D0D;
 }
 
-body, .sidebar {
+body, .sidebar, .concepts {
     transition: background-color 1s ease; 
 }
 
@@ -37,7 +33,28 @@ body, .sidebar {
 .container a img:hover {
     filter: brightness(1.2) ;
 }
+/* 褐色
+.container a img:hover {
+    filter: sepia(1);
+} */
+/* 反相
+.container a img:hover {
+    filter: invert(1);
+} */
 
+/* :root {
+    --scroll-speed: 1; 
+}
+
+@supports (--css: variables) {
+    :root {
+        --scroll-speed: var(--your-custom-speed); 
+    }
+}
+
+.image {
+    transform: scale(calc(1 * var(--scroll-speed)));
+} */
 /* 禁止拖拽 */
 img {
     -webkit-user-drag: none;
@@ -137,18 +154,44 @@ img {
     left: 55%;
 }
 
-
 /* 说明文 */
 .concepts {
     position: absolute;
     width: 100%;
     height: 1000vh;
     pointer-events: none;
+
+    transform: translateY(-50%);
+    color: white;
+    transition: color 0.3s;
+}
+
+.concepts ::after {
+    background: rgb(221, 221, 221);
+    transition: all 0.3s;
+    transform: scale(0, 1); 
+    transform-origin: left top; 
+}
+
+.concepts p:hover {
+    color: rgb(221, 221, 221);
+}
+
+.concepts p:hover::after {
+    transform: scale(1, 1); /* X方向1，Y方向1 */
+}
+
+.concepts.white-bg p {
+    color: black;
+}
+
+.concepts.white-bg p::after {
+    background: black;
 }
 
 #word1 {
     position: absolute;
-    color: white;
+    
     font-size: 20px;
     top: 51vh;
     left: 55vw;
@@ -156,37 +199,31 @@ img {
 }
 #word2 {
     position: absolute;
-    color: white;
+    
     font-size: 30px;
     top: 255vh;
     left: 48vw;
 }
 #word3 {
     position: absolute;
-    color: white;
     font-size: 24px;
     top: 430vh;
     left: 20vw;
-    transition: color 0.5s ease;
 }
 #word4 {
     position: absolute;
-    color: black;
     font-size: 30px;
     top: 550vh;
     left: 50vw;
-    transition: color 0.5s ease;
 }
 #word5 {
     position: absolute;
-    color: black;
     font-size: 24px;
     top: 725vh;
     left: 15vw;
 }
 #word6 {
     position: absolute;
-    color: black;
     font-size: 30px;
     top: 830vh;
     left: 47vw;
@@ -293,3 +330,115 @@ img {
     color: #C0C0C0; 
 }
 
+
+/* 一般手机尺寸 */
+@media only screen and (max-width: 600px) {
+    /* 在此处添加针对一般手机尺寸的样式 */
+    html, body  {
+        width: 100% !important;
+        height: 900vh;
+        overflow-x: hidden;
+    }
+    .concepts {
+        height: auto;
+    }
+
+    .sidebar {
+        top: 18%;
+        right: 10px;
+    }
+    .project1 {
+        width: 40vw; 
+        top: 10vh;
+        left: 13%; 
+    }
+    
+    .project2 {
+        width: 25vw;
+        top: 69vh;
+        left: 62%;
+    }
+    
+    .project3 {
+        width: 44vw;
+        top: 92vh;
+        left: 5%;
+        padding: 100px;
+    }
+    
+    .project4-1 {
+        width: 40vw;
+        top: 150vh;
+        left: 54%;
+    }
+    
+    .project5 {
+        width: 40vw;
+        top: 229vh;
+        left: 16%;
+    }
+    
+    .project6-1 {
+        width: 22vw;
+        top: 244vh;
+        left: 67%;
+    }
+    
+    .project7 {
+        width: 70vw;
+        top: 280vh;
+        left: 14%;
+    }
+    
+    .project6-2 {
+        width: 18vw;
+        top: 385vh;
+        left: 65%;
+    }
+    
+    .project4-2 {
+        width: 48vw;
+        top: 400vh;
+        left: 8%;
+    }
+    
+    .project8 {
+        width: 55vw;
+        top: 465vh;
+        left: 14%;
+    }
+    
+    .project9 {
+        width: 28vw;
+        top: 490vh;
+        left: 62%;
+    }
+    
+    .project10 {
+        width: 43vw;
+        top: 620vh;
+        left: 43%;
+    }
+    
+    .project11 {
+        width: 45vw;
+        top: 610vh;
+        left: 10%;
+    }
+    .project12 {
+        width: 40vw;
+        top: 660vh;
+        left: 55%;
+    }
+    
+}
+
+/* 平板尺寸 */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* 在此处添加针对平板尺寸的样式 */
+}
+
+/* 电脑尺寸 */
+@media only screen and (min-width: 1025px) {
+    /* 在此处添加针对电脑尺寸的样式 */
+}
