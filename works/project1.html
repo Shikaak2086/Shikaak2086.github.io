@@ -16,6 +16,7 @@
 
         .landscape-img {
             position: absolute;
+            top: 10vh;
             left: 50%;
             transform: translateX(-50%);
             /* 其他样式 */
@@ -27,15 +28,14 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
-        .gallery li img {
-            visibility: hidden; /* 初始状态隐藏图片 */
-        }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="gallery-container">
+        <div class="name"><p>texttext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01|25</p></div>
+       
+        <div class="gallery-container"> 
+            
             <ul class="gallery">
                 <li><img src="../images/project1/img1.jpg" alt="Image 1"></li>
                 <li><img src="../images/project1/img2.jpg" alt="Image 2"></li>
@@ -51,6 +51,7 @@
             </ul>
         </div>
         <div class="thumbnail-container">
+            
             <ul class="choice-btn">
                 <li><img src="../images/project1/img1.jpg" alt="Image 1"></li>
                 <li><img src="../images/project1/img2.jpg" alt="Image 2"></li>
@@ -67,18 +68,57 @@
         </div>
     </div>
     <div class="backHome"><a href="../content.html">Back</a></div>
-    <div class="name"><p>texttext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01|25</p></div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="../js/works.js"></script>
-    
-    <script>
-        window.addEventListener('load', function() {
-            document.querySelectorAll('.gallery li img').forEach(function(img) {
-                img.style.visibility = 'visible'; /* 页面完全加载后显示图片 */
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.onload = function() {
+                        lazyImage.classList.remove("loading");
+                    };
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+                }
             });
         });
-    </script>
+
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver support
+        let lazyLoad = function() {
+            lazyImages.forEach(function(lazyImage) {
+                if (lazyImage.getBoundingClientRect().top < window.innerHeight && lazyImage.getBoundingClientRect().bottom > 0) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.onload = function() {
+                        lazyImage.classList.remove("loading");
+                    };
+                    lazyImage.classList.remove("lazy");
+                }
+            });
+
+            if (lazyImages.length === 0) {
+                document.removeEventListener("scroll", lazyLoad);
+                window.removeEventListener("resize", lazyLoad);
+                window.removeEventListener("orientationchange", lazyLoad);
+            }
+        };
+
+        document.addEventListener("scroll", lazyLoad);
+        window.addEventListener("resize", lazyLoad);
+        window.addEventListener("orientationchange", lazyLoad);
+    }
+});
+    </script> -->
 </body>
 </html>

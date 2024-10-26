@@ -16,6 +16,7 @@
 
         .landscape-img {
             position: absolute;
+            top: 10vh;
             left: 50%;
             transform: translateX(-50%);
             /* 其他样式 */
@@ -27,14 +28,12 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
-        .gallery li img {
-            visibility: hidden; /* 初始状态隐藏图片 */
-        }
     </style>
 </head>
 <body>
     <div class="wrapper">
+        <div class="name"><p>texttext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01|25</p></div>
+
         <div class="gallery-container">
             <ul class="gallery">
                 <li><img src="../images/project9/img1.jpg" alt="Image 1"></li>
@@ -67,18 +66,9 @@
         </div>
     </div>
     <div class="backHome"><a href="../content.html">Back</a></div>
-    <div class="name"><p>texttext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01|25</p></div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="../js/works.js"></script>
-
-    <script>
-        window.addEventListener('load', function() {
-            document.querySelectorAll('.gallery li img').forEach(function(img) {
-                img.style.visibility = 'visible'; /* 页面完全加载后显示图片 */
-            });
-        });
-    </script>
 </body>
 </html>
