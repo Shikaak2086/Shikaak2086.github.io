@@ -123,19 +123,18 @@ body {
 
     .gallery-container {
         height: 65vh; /* 调整图片显示区域高度 */
-        margin-bottom: 50px;
+        padding-bottom: 120px;
     }
 
     .gallery {
         max-width: 95vw; /* 图片宽度占满屏幕 */
-        height: 70vh;
+        height: 60vh;
         margin: 0;
     }
     .gallery li img {
-        max-height: 65vh;
+        max-height: 60vh;
         width: 75vw;
         margin: 0 auto;
-        transform: translate(-50%, 0%);
         /* object-fit: cover; */
     }
 
@@ -195,7 +194,7 @@ body {
 
     .name {
         position: absolute;
-        top: 40px;
+        top: 30px;
         right: 55px; /* 改为right，使其靠右 */
         left: auto; /* 移除left属性 */
         text-align: right;
