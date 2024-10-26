@@ -133,7 +133,7 @@ body {
     }
     .gallery li img {
         max-height: 60vh;
-        width: 75vw;
+        max-width: 75vw;
         margin: 0 auto;
         /* object-fit: cover; */
     }
@@ -174,14 +174,14 @@ body {
         top: 21vh !important;
     }
     .portrait-img {
-        top: 0vh;
+        top: 5vh !important;
     }
 
     /* 调整轮播箭头位置 */
     .slick-prev, .slick-next {
         top: 40%; /* 调整箭头垂直位置 */
-        border-top: 1px solid #979797;
-        border-right: 1px solid #979797;
+        border-top: 1px solid #717171;
+        border-right: 1px solid #717171;
         height: 20px;
         width: 20px;
     }
