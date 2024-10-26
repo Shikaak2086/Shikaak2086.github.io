@@ -45,11 +45,25 @@ body {
     min-height: 100px;
 }
 
-.gallery li {
+/* .gallery li {
     display: flex;
     align-items: center;
     height: 100vh;
+} */
+
+/* 添加加载状态处理 */
+.gallery li {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 添加水平居中 */
+    height: 100vh;
+    position: relative;
 }
+
+.gallery li.loading {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 
 .gallery li img {
     object-fit: contain;
@@ -63,6 +77,7 @@ body {
     top: 25vh;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 85vw; 
 }
 
 .landscape-img {
@@ -70,6 +85,7 @@ body {
     top: 10vh;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 68vw;
 }
 
 .portrait-img {
@@ -77,6 +93,8 @@ body {
     top: 5vh;
     left: 50%;
     transform: translateX(-50%);
+    max-height: 85vh;
+    width: auto !important; 
 }
 
 .thumbnail-container {
@@ -114,7 +132,7 @@ body {
         margin: 0;
     }
     .gallery li img {
-        max-height: 55vh;
+        max-height: 65vh;
         width: 75vw;
         margin: 0 auto;
         transform: translate(-50%, 0%);
@@ -123,14 +141,14 @@ body {
 
     .thumbnail-container {
         width: 100vw; /* 缩略图容器宽度占满屏幕 */
-        height: 100px; /* 设置固定高度 */
+        height: 90px; /* 设置固定高度 */
         position: fixed;
-        bottom: 40px;
+        bottom: 5px;
     }
 
     .choice-btn {
         flex-direction: row; /* 改为水平方向 */
-        height: 100px;
+        height: 90px;
         width: 100%;
         position: relative;
         overflow-x: auto; /* 允许水平滚动 */
@@ -138,14 +156,14 @@ body {
     }
 
     .choice-btn li {
-        width: 100px; /* 设置固定宽度 */
-        height: 100px;
+        width: 90px; /* 设置固定宽度 */
+        height: 90px;
         flex-shrink: 0; /* 防止缩略图被压缩 */
     }
 
     .choice-btn li img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 90px;
+        max-height: 90px;
         object-fit: cover;
     }
 
@@ -174,14 +192,13 @@ body {
 
     .name {
         position: absolute;
-        top: 15px;
-        right: 60px; /* 改为right，使其靠右 */
+        top: 40px;
+        right: 55px; /* 改为right，使其靠右 */
         left: auto; /* 移除left属性 */
         text-align: right;
-        
     }
     .name p{
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
